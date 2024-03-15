@@ -1,5 +1,4 @@
 {% load static %}
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,7 +115,7 @@
     <header class="header" data-header>
         <div class="container">
 
-            <a href="./index.html" class="logo">
+            <a href="{% url 'index' %}" class="logo">
                 <img src="{%static 'images/logo.svg'%}" width="160" height="50" alt="Grilli - Home">
             </a>
 
@@ -126,14 +125,14 @@
                     <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                 </button>
 
-                <a href="./index.html" class="logo">
+                <a href="{% url 'index' %}" class="logo">
                     <img src="{%static 'images/logo.svg'%}" width="160" height="50" alt="Grilli - Home">
                 </a>
 
                 <ul class="navbar-list">
 
                     <li class="navbar-item">
-                        <a href="./index.html" class="navbar-link hover-underline active">
+                        <a href="{% url 'index' %}" class="navbar-link hover-underline active">
                             <div class="separator"></div>
 
                             <span class="span">Home</span>
@@ -142,7 +141,7 @@
 
                     
                     <li class="navbar-item">
-                      <a href="./index.html#about" class="navbar-link hover-underline">
+                      <a href="{% url 'index' %}#about" class="navbar-link hover-underline">
                         <div class="separator"></div>
                         
                         <span class="span">About Us</span>
@@ -150,7 +149,7 @@
                     </li>
                     
                     <li class="navbar-item">
-                        <a href="#menu" class="navbar-link hover-underline">
+                        <a href="{% url 'index' %}#menu" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Menus</span>
@@ -158,7 +157,7 @@
                     </li>
                     
                     <li class="navbar-item">
-                        <a href="./index.html#reservation" class="navbar-link hover-underline">
+                        <a href="{% url 'index' %}#reservation" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Reservation</span>
@@ -198,7 +197,7 @@
 
             </nav>
 
-            <a href="./reservationtable.html" class="btn btn-secondary">
+            <a href="{% url 'reservationtable_page' %}" class="btn btn-secondary">
                 <span class="text text-1">Find A Table</span>
 
                 <span class="text text-2" aria-hidden="true">Find A Table</span>
@@ -541,7 +540,7 @@
 
                 <div class="footer-brand has-before has-after">
 
-                    <a href="./index.html" class="logo">
+                    <a href="{% url 'index' %}" class="logo">
                         <img src="{%static 'images/logo.svg'%}" width="160" height="50" loading="lazy" alt="grilli home">
                     </a>
 
@@ -678,4 +677,3 @@
 </body>
 
 </html>
-{% endblock content %}

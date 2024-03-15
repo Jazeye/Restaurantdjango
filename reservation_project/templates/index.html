@@ -196,7 +196,7 @@
         </div>
 
       </nav>
-      <a href="{% url 'reservationtable_page' %}" class="btn btn-secondary">  
+      <a href="{% url 'reservationtable_page' %}" class="btn btn-secondary">
         <span class="text text-1">Find A Table</span>
 
         <span class="text text-2" aria-hidden="true">Find A Table</span>
@@ -313,7 +313,7 @@
           <ion-icon name="chevron-forward"></ion-icon>
         </button>
 
-        <a href="./reservationtable.html" class="hero-btn has-after">
+        <a href="{% url 'reservationtable_page' %}" class="hero-btn has-after">
           <img src="{%static 'images/hero-icon.png'%}" width="48" height="48" alt="booking icon">
 
           <span class="label-2 text-center span">Book A Table</span>
@@ -514,10 +514,11 @@
               <span class="span body-1">$20.00</span>
             </div>
 
-            <a href="{% url 'menu_page' %}" class="btn btn-primary">
-              <span class="text text-1">View All Menu</span>
+            <a href="{% url 'menu_page' %}" class="btn btn-primary">Go to Menu</a>
 
-              <span class="text text-2" aria-hidden="true">View All Menu</span>
+            <span class="text text-1">View All Menu</span>
+
+            <span class="text text-2" aria-hidden="true">View All Menu</span>
             </a>
 
           </div>
@@ -718,7 +719,7 @@
             During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
           </p>
 
-          <a href="./menu.html" class="btn btn-primary">
+          <a href="{% url 'menu_page' %}" class="btn btn-primary">
             <span class="text text-1">View All Menu</span>
 
             <span class="text text-2" aria-hidden="true">View All Menu</span>
@@ -870,7 +871,7 @@
 
             </form>
 
-            <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
+            <div class="form-right text-center" style="background-image: url('{%static 'images/form-pattern.png'%}')">
 
               <h2 class="headline-1 text-center">Contact Us</h2>
 
@@ -1095,7 +1096,7 @@
   -->
 
   <footer class="footer section has-bg-image text-center" id="footer"
-  style="background-image: url('{% static 'images/footer-bg.jpg' %}')">
+    style="background-image: url('{% static 'images/footer-bg.jpg' %}')">
     <div class="container">
 
       <div class="footer-top grid-list">

@@ -115,7 +115,7 @@
     <header class="header" data-header>
         <div class="container">
 
-            <a href="./index.html" class="logo">
+            <a href="{% url 'index' %}" class="logo">
                 <img src="{%static 'images/logo.svg'%}" width="160" height="50" alt="Grilli - Home">
             </a>
 
@@ -125,7 +125,7 @@
                     <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                 </button>
 
-                <a href="./index.html" class="logo">
+                <a href="{% url 'index' %}" class="logo">
                     <img src="{%static 'images/logo.svg'%}" width="160" height="50" alt="Grilli - Home">
                 </a>
 
@@ -141,7 +141,7 @@
 
                     
                     <li class="navbar-item">
-                        <a href="./index.html#about" class="navbar-link hover-underline">
+                        <a href="{% url 'index' %}#about" class="navbar-link hover-underline">
                             <div class="separator"></div>
                             
                             <span class="span">About Us</span>
@@ -149,7 +149,7 @@
                     </li>
                     
                     <li class="navbar-item">
-                        <a href="./index.html#menu" class="navbar-link hover-underline">
+                        <a href="{% url 'index' %}#menu" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Menus</span>
@@ -157,7 +157,7 @@
                     </li>
 
                     <li class="navbar-item">
-                        <a href="./index.html#reservation" class="navbar-link hover-underline">
+                        <a href="{% url 'index' %}#reservation" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Reservation</span>
@@ -357,7 +357,7 @@
 
                 <div class="footer-brand has-before has-after">
 
-                    <a href=".." class="logo">
+                    <a href="{% url 'index' %}" class="logo">
                         <img src="{%static 'images/logo.svg'%}" width="160" height="50" loading="lazy" alt="grilli home">
                     </a>
 
