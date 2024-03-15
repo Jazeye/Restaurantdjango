@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import ReservationForm
 from .models import Reservation
+from . import forms,models
+
 
 def index(request):
-    return render(request, 'index.html')
-
+    products = Reservation.objects.all()
+    return render(request, 'index.html', {'products': products})
 def reservationtable_view(request):
     return render(request, 'reservationtable.html')
 
