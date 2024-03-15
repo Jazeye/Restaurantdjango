@@ -6,5 +6,5 @@ def index(request):
 def reservationtable_view(request):
     return render(request, 'reservationtable.html')
 
-# def menu(request):
-#     return render(request, 'menu.html')
+def menu_view(request):
+    return render(request, 'menu.html')
