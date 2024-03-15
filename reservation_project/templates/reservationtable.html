@@ -30,7 +30,7 @@
     <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- 
     - preload images
@@ -139,15 +139,15 @@
                         </a>
                     </li>
 
-                    
+
                     <li class="navbar-item">
                         <a href="{% url 'index' %}#about" class="navbar-link hover-underline">
                             <div class="separator"></div>
-                            
+
                             <span class="span">About Us</span>
                         </a>
                     </li>
-                    
+
                     <li class="navbar-item">
                         <a href="{% url 'index' %}#menu" class="navbar-link hover-underline">
                             <div class="separator"></div>
@@ -225,119 +225,123 @@
         - #EVENT
       -->
 
-      <section class="section reserved-tables bg-black-10" id="reserve-table" aria-label="Reserved Tables">
-        <div class="container">
+            <section class="section reserved-tables bg-black-10" id="reserve-table" aria-label="Reserved Tables">
+                <div class="container">
 
-            <p class="section-subtitle label-2 text-center1">Reserve your seats now</p>
+                    <p class="section-subtitle label-2 text-center1">Reserve your seats now</p>
 
-            <h2 class="section-title headline-1 text-center">Choose your Table</h2>
+                    <h2 class="section-title headline-1 text-center">Choose your Table</h2>
 
-            <div class="table-grid">
-                <!-- Reserved Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table1</p>
-                        <p class="table-status label-2">Reserved</p>
-                    </div>
-                </div>
+                    <div class="table-grid">
+                        <!-- Render reserved tables -->
+                        {% if reservations %}
+                        {% for reservation in reservations %}
+                        <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">{{ reservation.reservation_date }} - {{
+                                    reservation.table_number }}</p>
+                                <p class="table-status label-2">Reserved</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <!-- Render empty tables if no reservations -->
+                        <!-- Empty Table -->
+                        <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">No reservations yet</p>
+                                <a href="{% url 'index' %}#reservation"><button class="reserve-button" >Reserve</button></a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <!-- Reserved Table
+                        <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table3</p>
+                                <p class="table-status label-2">Reserved</p>
+                            </div>
+                        </div> -->
+                        <!-- Empty Table -->
+                        <!-- <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static '/images/table.jpg'%}" alt="Empty Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table2</p>
+                                <button class="reserve-button">Reserve</button>
+                            </div>
+                        </div> -->
+                        <!-- Reserved Table -->
+                        <!-- <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table3</p>
+                                <p class="table-status label-2">Reserved</p>
+                            </div>
+                        </div> -->
+                        <!-- Empty Table -->
+                        <!-- <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/table.jpg'%}" alt="Empty Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table2</p>
+                                
+                            </div>
+                        </div> -->
+                        <!-- Reserved Table
+                        <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table3</p>
+                                <p class="table-status label-2">Reserved</p>
+                            </div>
+                        </div> -->
+                        <!-- Empty Table
+                        <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/table.jpg'%}" alt="Empty Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table2</p>
+                                <button class="reserve-button">Reserve</button>
+                            </div>
+                        </div> -->
+                        <!-- Reserved Table -->
+                        <!-- <div class="table card">
+                            <div class="table-image">
+                                <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
+                            </div>
+                            <div class="table-details">
+                                <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
+                                <p class="table-time label-2">Table3</p>
+                                <p class="table-status label-2">Reserved</p>
+                            </div>
+                        </div> -->
 
-                <!-- Empty Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/table.jpg'%}" alt="Empty Table" class="img-cover">
                     </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table2</p>
-                        <button class="reserve-button">Reserve</button>
-                    </div>
-                </div>
-                <!-- Reserved Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table3</p>
-                        <p class="table-status label-2">Reserved</p>
-                    </div>
-                </div>
-                <!-- Empty Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static '/images/table.jpg'%}" alt="Empty Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table2</p>
-                        <button class="reserve-button">Reserve</button>
-                    </div>
-                </div>
-                <!-- Reserved Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table3</p>
-                        <p class="table-status label-2">Reserved</p>
-                    </div>
-                </div>
-                <!-- Empty Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/table.jpg'%}" alt="Empty Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table2</p>
-                        <button class="reserve-button">Reserve</button>
-                    </div>
-                </div>
-                <!-- Reserved Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table3</p>
-                        <p class="table-status label-2">Reserved</p>
-                    </div>
-                </div>
-                <!-- Empty Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/table.jpg'%}" alt="Empty Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table2</p>
-                        <button class="reserve-button">Reserve</button>
-                    </div>
-                </div>
-                <!-- Reserved Table -->
-                <div class="table card">
-                    <div class="table-image">
-                        <img src="{%static 'images/Reserved.jpg'%}" alt="Reserved Table" class="img-cover">
-                    </div>
-                    <div class="table-details">
-                        <p class="table-time label-2">15/09/2022 - 8:00 PM</p>
-                        <p class="table-time label-2">Table3</p>
-                        <p class="table-status label-2">Reserved</p>
-                    </div>
-                </div>
 
-            </div>
-
-        </div>
-    </section>    
+                </div>
+            </section>
 
         </article>
     </main>
@@ -350,7 +354,8 @@
     - #FOOTER
   -->
 
-    <footer class="footer section has-bg-image text-center" id="footer" style="background-image: url('{%static 'images/footer-bg.jpg'%}')">
+    <footer class="footer section has-bg-image text-center" id="footer"
+        style="background-image: url('{%static 'images/footer-bg.jpg'%}')">
         <div class="container">
 
             <div class="footer-top grid-list">
@@ -358,7 +363,8 @@
                 <div class="footer-brand has-before has-after">
 
                     <a href="{% url 'index' %}" class="logo">
-                        <img src="{%static 'images/logo.svg'%}" width="160" height="50" loading="lazy" alt="grilli home">
+                        <img src="{%static 'images/logo.svg'%}" width="160" height="50" loading="lazy"
+                            alt="grilli home">
                     </a>
 
                     <address class="body-4">
@@ -483,7 +489,7 @@
     <!-- 
     - custom js link
   -->
-  <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
     <!-- 
     - ionicon link

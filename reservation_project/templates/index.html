@@ -514,7 +514,7 @@
               <span class="span body-1">$20.00</span>
             </div>
 
-            <a href="{% url 'menu_page' %}" class="btn btn-primary">Go to Menu</a>
+            <a href="{% url 'menu_page' %}" class="btn btn-primary">
 
             <span class="text text-1">View All Menu</span>
 
@@ -778,7 +778,8 @@
 
           <div class="form reservation-form bg-black-10">
 
-            <form action="" class="form-left">
+            <form action="{% url 'reservationtable_page' %}" method="POST" class="form-left">
+              {% csrf_token %}
 
               <h2 class="headline-1 text-center">Online Reservation</h2>
 
@@ -805,10 +806,6 @@
                     <option value="4-person">Table-4 </option>
                     <option value="5-person">Table-5 </option>
                     <option value="6-person">Table-6 </option>
-                    <option value="6-person">Table-7 </option>
-                    <option value="6-person">Table-8 </option>
-                    <option value="6-person">Table-9 </option>
-                    <option value="6-person">Table-10 </option>
                   </select>
 
                   <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>

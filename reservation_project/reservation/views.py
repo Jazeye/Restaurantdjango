@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import ReservationForm
+from .models import Reservation
 
 def index(request):
     return render(request, 'index.html')
@@ -8,3 +10,18 @@ def reservationtable_view(request):
 
 def menu_view(request):
     return render(request, 'menu.html')
+
+#form reservation
+def reserve_table(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reservation_table')  # Redirect to the same page after submission
+        else:
+            print(form.errors)  # Print form errors for debugging
+    else:
+        form = ReservationForm()
+    
+    reservations = Reservation.objects.all()  # Fetch all reservations from the database
+    return render(request, 'reservationtable.html', {'form': form, 'reservations': reservations})
